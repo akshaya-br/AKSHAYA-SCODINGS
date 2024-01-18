@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> 
+                    <button class="btn btn-info" onclick="history.back()">Back</button>
+            </li>
+        </ul>
+    </div>  
+
+    <div class="container mt-4">
+        <h2 class="mb-4">Property Details</h2>
+        <center>{{key}}</center>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Property Title:</label>
+                    <input type="text" class="form-control" id="" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Property Description:</label>
+                    <textarea class="form-control" id="" name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Property Type:</label>
+                    <select class="form-control" id="type" name="type" required>
+                        <option value="select">Select</option>
+                        <option value="onebhk">One BHK</option>
+                        <option value="twobhk">Two BHK</option>
+                        <option value="threebhk">Three BHK</option>
+                        <option value="fourbhk">Four BHK</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">Area:</label>
+                    <input type="text" class="form-control" id="area" name="area" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Size:</label>
+                    <input type="text" class="form-control" id="size" name="size" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rentPrice">Rent Price:</label>
+                    <input type="text" class="form-control" id="rentPrice" name="rentPrice" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Property Features:</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="bathrooms" name="features" value="bathrooms" required>
+                        <label class="form-check-label" for="bathrooms">Attached Bathrooms</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="garages" name="features" value="garages" required>
+                        <label class="form-check-label" for="garages">Garages</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="hall" name="features" value="hall" required>
+                        <label class="form-check-label" for="hall">Hall</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="kitchen" name="features" value="kitchen" required>
+                        <label class="form-check-label" for="kitchen">Kitchen</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="images">Property Images:</label>
+                    <input type="file" class="form-control-file" id="images" name="images" required>
+                </div>
+                
+
+
+                <input type="submit" class="btn btn-primary col-12" value="Submit">
+                
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

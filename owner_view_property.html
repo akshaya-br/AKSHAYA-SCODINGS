@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add custom CSS styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>owner view property</title>
+</head>
+<body>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> 
+                    <button class="btn btn-info" onclick="history.back()">Back</button>
+            </li>
+        </ul>
+    </div>  
+    <form action="" method="post">
+        {% csrf_token %}
+        <table border="1">
+            <tr>
+                <th>PROPERTY TITLE</th>
+                <th>PROPERTY DESCRIPTION</th>
+                <th>PROPERTY TYPE</th>
+                <th>LOCATION</th>
+                <th>AREA(Sq.ft)</th>
+                <th>SIZE(Sq.ft)</th>
+                <th>RENT PRICE</th>
+                <th>PROPERTY FEATURES</th>
+                <th>PROPERTY IMAGES</th>
+            </tr>
+            {% for i in view  %}
+            <tr>
+                <td>{{i.Property_title}}</td>
+                <td>{{i.Property_description}}</td>
+                <td>{{i.Property_type}}</td>
+                <td>{{i.Property_location}}</td>
+                <td>{{i.Property_area}}</td>
+                <td>{{i.Property_size}}</td>
+                <td>{{i.Property_rent_price}}</td>
+                <td>{{i.Property_features}}</td>
+                <td><img src="{{i.Property_image.url}}" alt="" height="60px" width="60px"></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    
+
